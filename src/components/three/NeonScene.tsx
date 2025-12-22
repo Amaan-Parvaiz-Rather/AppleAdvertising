@@ -1,6 +1,5 @@
 import { Suspense, useRef, useMemo } from 'react';
 import { Canvas, useFrame } from '@react-three/fiber';
-import { Float } from '@react-three/drei';
 import * as THREE from 'three';
 
 function NeonTorus({ position, color, speed = 1 }: { position: [number, number, number]; color: string; speed?: number }) {
@@ -10,39 +9,46 @@ function NeonTorus({ position, color, speed = 1 }: { position: [number, number, 
     if (meshRef.current) {
       meshRef.current.rotation.x = state.clock.elapsedTime * 0.2 * speed;
       meshRef.current.rotation.y = state.clock.elapsedTime * 0.3 * speed;
+      // Add floating effect manually
+      meshRef.current.position.y = position[1] + Math.sin(state.clock.elapsedTime * 0.5) * 0.3;
     }
   });
 
   return (
-    <Float speed={2} rotationIntensity={0.5} floatIntensity={1}>
-      <mesh ref={meshRef} position={position}>
-        <torusGeometry args={[1, 0.3, 16, 50]} />
-        <meshStandardMaterial
-          color={color}
-          emissive={color}
-          emissiveIntensity={0.5}
-          transparent
-          opacity={0.8}
-        />
-      </mesh>
-    </Float>
+    <mesh ref={meshRef} position={position}>
+      <torusGeometry args={[1, 0.3, 16, 50]} />
+      <meshStandardMaterial
+        color={color}
+        emissive={color}
+        emissiveIntensity={0.5}
+        transparent
+        opacity={0.8}
+      />
+    </mesh>
   );
 }
 
-function NeonSphere({ position, color }: { position: [number, number, number]; color: string }) {
+function NeonSphere({ position, color, offset = 0 }: { position: [number, number, number]; color: string; offset?: number }) {
+  const meshRef = useRef<THREE.Mesh>(null);
+  
+  useFrame((state) => {
+    if (meshRef.current) {
+      meshRef.current.position.y = position[1] + Math.sin(state.clock.elapsedTime * 0.7 + offset) * 0.4;
+      meshRef.current.rotation.y = state.clock.elapsedTime * 0.2;
+    }
+  });
+
   return (
-    <Float speed={1.5} rotationIntensity={0.3} floatIntensity={2}>
-      <mesh position={position}>
-        <sphereGeometry args={[0.5, 32, 32]} />
-        <meshStandardMaterial
-          color={color}
-          emissive={color}
-          emissiveIntensity={0.4}
-          transparent
-          opacity={0.6}
-        />
-      </mesh>
-    </Float>
+    <mesh ref={meshRef} position={position}>
+      <sphereGeometry args={[0.5, 32, 32]} />
+      <meshStandardMaterial
+        color={color}
+        emissive={color}
+        emissiveIntensity={0.4}
+        transparent
+        opacity={0.6}
+      />
+    </mesh>
   );
 }
 
@@ -97,9 +103,9 @@ function Scene() {
       
       <NeonTorus position={[-3, 1, -2]} color="#a855f7" speed={0.8} />
       <NeonTorus position={[3, -1, -3]} color="#06b6d4" speed={0.6} />
-      <NeonSphere position={[0, 2, -4]} color="#ec4899" />
-      <NeonSphere position={[-2, -2, -3]} color="#22d3ee" />
-      <NeonSphere position={[2.5, 0.5, -2]} color="#a855f7" />
+      <NeonSphere position={[0, 2, -4]} color="#ec4899" offset={0} />
+      <NeonSphere position={[-2, -2, -3]} color="#22d3ee" offset={1} />
+      <NeonSphere position={[2.5, 0.5, -2]} color="#a855f7" offset={2} />
       
       <ParticleField />
     </>
@@ -109,7 +115,7 @@ function Scene() {
 export default function NeonScene() {
   return (
     <div className="absolute inset-0 -z-10">
-      <Suspense fallback={<div className="w-full h-full bg-background" />}>
+      <Suspense fallback={null}>
         <Canvas
           camera={{ position: [0, 0, 6], fov: 60 }}
           gl={{ antialias: true, alpha: true }}
