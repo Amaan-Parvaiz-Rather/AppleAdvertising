@@ -5,8 +5,8 @@ import { Button } from '@/components/ui/button';
 
 export default function CTASection() {
   return (
-    <section className="py-24 relative overflow-hidden">
-      <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-background to-accent/10" />
+    <section className="py-24 relative overflow-hidden bg-background">
+      <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-accent/5" />
       
       <div className="container-custom relative z-10">
         <motion.div
@@ -34,13 +34,13 @@ export default function CTASection() {
           
           <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
             <Link to="/contact">
-              <Button variant="hero" size="xl" className="group">
+              <Button variant="hero" size="xl" className="group shadow-xl">
                 Get Your Free Quote
                 <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" size={20} />
               </Button>
             </Link>
             <Link to="/products">
-              <Button variant="outline" size="xl">
+              <Button variant="outline" size="xl" className="shadow-lg">
                 Explore Products
               </Button>
             </Link>

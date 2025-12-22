@@ -24,7 +24,7 @@ const socialLinks = [
 
 export default function Footer() {
   return (
-    <footer className="border-t border-border/30 bg-card/30">
+    <footer className="border-t border-border bg-card">
       <div className="container-custom py-16">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12">
           <div className="md:col-span-2">
@@ -40,7 +40,7 @@ export default function Footer() {
                 <a
                   key={social.label}
                   href={social.href}
-                  className="p-2 rounded-lg bg-secondary/50 text-muted-foreground hover:text-primary hover:bg-secondary transition-all duration-300"
+                  className="p-2 rounded-lg bg-secondary text-muted-foreground hover:text-primary hover:bg-primary/10 transition-all duration-300"
                   aria-label={social.label}
                 >
                   <social.icon size={20} />
@@ -82,7 +82,7 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="mt-12 pt-8 border-t border-border/30 flex flex-col md:flex-row justify-between items-center gap-4">
+        <div className="mt-12 pt-8 border-t border-border flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-sm text-muted-foreground">
             © {new Date().getFullYear()} NeonCraft Studios. All rights reserved.
           </p>

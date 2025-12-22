@@ -24,9 +24,7 @@ const testimonials = [
 
 export default function TrustSection() {
   return (
-    <section className="py-24 relative overflow-hidden">
-      <div className="absolute inset-0 bg-gradient-to-b from-background via-card/50 to-background" />
-      
+    <section className="py-24 bg-secondary/30 relative overflow-hidden">
       <div className="container-custom relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 40 }}
@@ -51,7 +49,7 @@ export default function TrustSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: '-100px' }}
               transition={{ duration: 0.6, delay: index * 0.1 }}
-              className="glass-card p-6 hover:border-primary/30 transition-all duration-300"
+              className="bg-card border border-border rounded-2xl p-6 hover:border-primary/30 hover:shadow-lg transition-all duration-300"
             >
               <div className="flex gap-1 mb-4">
                 {Array.from({ length: testimonial.rating }).map((_, i) => (
@@ -72,10 +70,10 @@ export default function TrustSection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: '-100px' }}
           transition={{ duration: 0.6, delay: 0.3 }}
-          className="mt-16 flex flex-wrap items-center justify-center gap-12 opacity-50"
+          className="mt-16 flex flex-wrap items-center justify-center gap-12 text-muted-foreground/60"
         >
           {['Brand One', 'Brand Two', 'Brand Three', 'Brand Four', 'Brand Five'].map((brand) => (
-            <div key={brand} className="text-xl font-bold text-muted-foreground">
+            <div key={brand} className="text-xl font-bold hover:text-muted-foreground transition-colors">
               {brand}
             </div>
           ))}

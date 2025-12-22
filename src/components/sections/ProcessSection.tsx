@@ -26,7 +26,7 @@ const steps = [
 
 export default function ProcessSection() {
   return (
-    <section className="py-24 bg-card/30">
+    <section className="py-24 bg-background">
       <div className="container-custom">
         <motion.div
           initial={{ opacity: 0, y: 40 }}
@@ -53,7 +53,7 @@ export default function ProcessSection() {
               transition={{ duration: 0.6, delay: index * 0.1 }}
               className="relative group"
             >
-              <div className="glass-card p-6 h-full hover:border-primary/30 transition-all duration-300">
+              <div className="bg-card border border-border rounded-2xl p-6 h-full hover:border-primary/30 hover:shadow-lg transition-all duration-300">
                 <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mb-4 group-hover:bg-primary/20 transition-colors duration-300">
                   <step.icon size={24} className="text-primary" />
                 </div>
