@@ -8,6 +8,7 @@ import TrustSection from '@/components/sections/TrustSection';
 import CTASection from '@/components/sections/CTASection';
 
 const Index = () => {
+  console.log("Index page rendering");
   return (
     <>
       <Helmet>
