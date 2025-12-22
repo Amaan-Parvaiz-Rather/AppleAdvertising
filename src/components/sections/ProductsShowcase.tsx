@@ -6,26 +6,23 @@ const products = [
   {
     title: 'Custom Neon Signs',
     description: 'Handcrafted neon lights that bring your vision to life with vibrant colors and stunning designs.',
-    gradient: 'from-neon-pink to-neon-purple',
-    image: '/placeholder.svg',
+    gradient: 'from-[hsl(330,100%,60%)] to-[hsl(280,100%,60%)]',
   },
   {
     title: 'LED Channel Letters',
     description: 'Professional 3D illuminated letters perfect for storefronts and corporate branding.',
-    gradient: 'from-neon-cyan to-neon-blue',
-    image: '/placeholder.svg',
+    gradient: 'from-[hsl(180,100%,45%)] to-[hsl(200,100%,50%)]',
   },
   {
     title: 'Hoarding Boards',
     description: 'Large-scale illuminated displays that command attention and maximize brand visibility.',
-    gradient: 'from-neon-purple to-neon-cyan',
-    image: '/placeholder.svg',
+    gradient: 'from-[hsl(280,100%,60%)] to-[hsl(180,100%,45%)]',
   },
 ];
 
 export default function ProductsShowcase() {
   return (
-    <section className="py-24 relative">
+    <section className="py-24 bg-secondary/30 relative">
       <div className="container-custom">
         <motion.div
           initial={{ opacity: 0, y: 40 }}
@@ -54,7 +51,7 @@ export default function ProductsShowcase() {
             >
               <Link
                 to="/products"
-                className="group block relative h-[400px] rounded-2xl overflow-hidden glass-card"
+                className="group block relative h-[400px] rounded-2xl overflow-hidden bg-card border border-border shadow-lg hover:shadow-xl transition-all duration-500"
               >
                 <div className={`absolute inset-0 bg-gradient-to-br ${product.gradient} opacity-10 group-hover:opacity-20 transition-opacity duration-500`} />
                 
@@ -74,7 +71,7 @@ export default function ProductsShowcase() {
                   </div>
                 </div>
 
-                <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-primary/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                <div className={`absolute top-0 left-0 right-0 h-1 bg-gradient-to-r ${product.gradient} opacity-0 group-hover:opacity-100 transition-opacity duration-500`} />
               </Link>
             </motion.div>
           ))}
