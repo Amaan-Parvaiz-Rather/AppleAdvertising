@@ -10,8 +10,8 @@ export default function HeroSection() {
   const [isMuted, setIsMuted] = useState(true);
   const [videoError, setVideoError] = useState(false);
 
-  // Sample video URL - user can replace this
-  const videoUrl = "https://assets.mixkit.co/videos/preview/mixkit-lighting-in-a-dark-room-39708-large.mp4";
+  // Hero background video
+  const videoUrl = "/videos/hero-background.mp4";
 
   useEffect(() => {
     if (videoRef.current) {
