@@ -35,7 +35,7 @@ export default function CTASection() {
           <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
             <Link to="/contact">
               <Button variant="hero" size="xl" className="group shadow-xl">
-                Get Your Free Quote
+                Reach Out to Us
                 <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" size={20} />
               </Button>
             </Link>

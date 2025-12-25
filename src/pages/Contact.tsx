@@ -14,7 +14,7 @@ import { Textarea } from '@/components/ui/textarea';
 import { Label } from '@/components/ui/label';
 
 const contactSchema = z.object({
-  name: z.string().trim().min(2, 'Name must be at least 2 characters').max(100, 'Name must be less than 100 characters'),
+  name: z.string().trim().min(3, 'Name must be at least 3 characters').max(50, 'Name must be less than 50 characters'),
   email: z.string().trim().email('Please enter a valid email').max(255, 'Email must be less than 255 characters'),
   phone: z.string().trim().optional(),
   message: z.string().trim().min(10, 'Message must be at least 10 characters').max(1000, 'Message must be less than 1000 characters'),
@@ -26,8 +26,8 @@ const contactInfo = [
   {
     icon: Mail,
     label: 'Email',
-    value: 'hello@neoncraft.com',
-    href: 'mailto:hello@neoncraft.com',
+    value: 'hello@AppleAdvertising.com',
+    href: 'mailto:hello@AppleAdvertising.com',
   },
   {
     icon: Phone,
@@ -57,20 +57,37 @@ const Contact = () => {
 
   const onSubmit = async (data: ContactFormData) => {
     setIsSubmitting(true);
-    // Simulate form submission
-    await new Promise((resolve) => setTimeout(resolve, 1500));
-    setIsSubmitting(false);
-    toast.success('Message sent successfully! We\'ll get back to you soon.');
-    reset();
+    try {
+      const response = await fetch("https://formsubmit.co/ajax/amaan.rather8004@gmail.com", {
+        method: "POST",
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        },
+        body: JSON.stringify(data)
+      });
+
+      if (response.ok) {
+        toast.success('Message sent successfully! We\\\'ll get back to you soon.');
+        reset();
+      } else {
+        const result = await response.json();
+        toast.error(result.message || 'Something went wrong. Please try again.');
+      }
+    } catch (error) {
+      toast.error('Something went wrong. Please try again.');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
     <>
       <Helmet>
-        <title>Contact Us | NeonCraft Studios - Get a Free Quote</title>
+        <title>Contact Us | Apple Advertising - Get a Free Quote</title>
         <meta 
           name="description" 
-          content="Ready to light up your brand? Contact NeonCraft Studios for a free consultation on custom neon signs and illuminated signage." 
+          content="Ready to light up your brand? Contact Apple Advertising for a free consultation on custom neon signs and illuminated signage." 
         />
       </Helmet>
       

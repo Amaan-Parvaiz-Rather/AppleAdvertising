@@ -123,8 +123,9 @@ export default function HeroSection() {
             transition={{ duration: 0.8, delay: 0.4, ease: 'easeOut' }}
             className="mt-6 text-lg sm:text-xl text-muted-foreground max-w-2xl mx-auto"
           >
-            Transform your business presence with custom neon signs and illuminated 
+            Apple Advertisment transforms your business presence with custom neon 3D signs and illuminated 
             hoarding boards that captivate audiences and define your brand.
+            Apple Advertising helps businesses build stronger brand visibility through innovative design and production.
           </motion.p>
 
           <motion.div
@@ -135,7 +136,7 @@ export default function HeroSection() {
           >
             <Link to="/contact">
               <Button variant="hero" size="xl" className="group shadow-xl">
-                Get a Custom Quote
+                Reach Out to Us
                 <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" size={20} />
               </Button>
             </Link>
@@ -153,11 +154,11 @@ export default function HeroSection() {
             className="mt-20 flex items-center justify-center gap-12"
           >
             <div className="text-center glass-card px-6 py-4 rounded-xl">
-              <div className="text-3xl font-bold text-foreground">500+</div>
+              <div className="text-3xl font-bold text-foreground">200+</div>
               <div className="text-sm text-muted-foreground">Projects Delivered</div>
             </div>
             <div className="text-center glass-card px-6 py-4 rounded-xl">
-              <div className="text-3xl font-bold text-foreground">12+</div>
+              <div className="text-3xl font-bold text-foreground">10+</div>
               <div className="text-sm text-muted-foreground">Years Experience</div>
             </div>
             <div className="text-center hidden sm:block glass-card px-6 py-4 rounded-xl">

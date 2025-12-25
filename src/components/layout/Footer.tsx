@@ -1,25 +1,30 @@
-import { Link } from 'react-router-dom';
-import { Instagram, Twitter, Linkedin, Mail } from 'lucide-react';
+import { Link } from "react-router-dom";
+import { Instagram, Twitter, Facebook, Mail, Target } from "lucide-react";
 
 const footerLinks = {
   company: [
-    { label: 'About Us', href: '/about' },
-    { label: 'Our Work', href: '/products' },
-    { label: 'Contact', href: '/contact' },
+    { label: "About Us", href: "/about" },
+    { label: "Our Work", href: "/products" },
+    { label: "Contact", href: "/contact" },
   ],
   services: [
-    { label: 'Custom Neon Signs', href: '/products' },
-    { label: 'LED Displays', href: '/products' },
-    { label: 'Hoarding Boards', href: '/products' },
-    { label: 'Business Signage', href: '/products' },
+    { label: "Custom Neon Signs", href: "/products" },
+    { label: "LED Displays", href: "/products" },
+    { label: "Hoarding Boards", href: "/products" },
+    { label: "Business Signage", href: "/products" },
   ],
 };
 
 const socialLinks = [
-  { icon: Instagram, href: '#', label: 'Instagram' },
-  { icon: Twitter, href: '#', label: 'Twitter' },
-  { icon: Linkedin, href: '#', label: 'LinkedIn' },
-  { icon: Mail, href: 'mailto:hello@neoncraft.com', label: 'Email' },
+  {
+    icon: Instagram,
+    href: "https://www.instagram.com/apple._.advertising?igsh=MXZ6d3dqYTljMHRoag==",
+    label: "Instagram",
+    Target: "_blank",
+  },
+  { icon: Twitter, href: "#", label: "Twitter" },
+  { icon: Facebook, href: "#", label: "Facebook" },
+  { icon: Mail, href: "mailto:hello@neoncraft.com", label: "Email" },
 ];
 
 export default function Footer() {
@@ -28,12 +33,15 @@ export default function Footer() {
       <div className="container-custom py-16">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12">
           <div className="md:col-span-2">
-            <Link to="/" className="inline-block">
-              <span className="text-2xl font-bold gradient-text-neon">NeonCraft</span>
+            <Link to="/" className="inline-flex items-end">
+              <img src="/image/transparernt logo.png" alt="apple advertisement logo" className="h-12 w-auto mr-3" />
+              <span className="text-2xl font-bold gradient-text-neon">
+                Apple Advertising
+              </span>
             </Link>
             <p className="mt-4 text-muted-foreground max-w-md">
-              Crafting premium illuminated signage that transforms businesses into unforgettable brands. 
-              Every light tells a story.
+              Crafting premium illuminated signage that transforms businesses
+              into unforgettable brands. Every light tells a story.
             </p>
             <div className="flex gap-4 mt-6">
               {socialLinks.map((social) => (
@@ -84,11 +92,15 @@ export default function Footer() {
 
         <div className="mt-12 pt-8 border-t border-border flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-sm text-muted-foreground">
-            © {new Date().getFullYear()} NeonCraft Studios. All rights reserved.
+            © {new Date().getFullYear()} Apple Advertising. All rights reserved.
           </p>
           <div className="flex gap-6 text-sm text-muted-foreground">
-            <a href="#" className="hover:text-foreground transition-colors">Privacy Policy</a>
-            <a href="#" className="hover:text-foreground transition-colors">Terms of Service</a>
+            <a href="#" className="hover:text-foreground transition-colors">
+              Privacy Policy
+            </a>
+            <a href="#" className="hover:text-foreground transition-colors">
+              Terms of Service
+            </a>
           </div>
         </div>
       </div>

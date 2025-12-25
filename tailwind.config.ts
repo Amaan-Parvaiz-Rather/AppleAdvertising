@@ -33,7 +33,7 @@ export default {
         },
         muted: {
           DEFAULT: "hsl(var(--muted))",
-          foreground: "hsl(var(--muted-foreground))",
+          foreground: "#161616ff",
         },
         accent: {
           DEFAULT: "hsl(var(--accent))",

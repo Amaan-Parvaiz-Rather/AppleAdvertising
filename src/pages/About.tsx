@@ -29,20 +29,20 @@ const values = [
 ];
 
 const stats = [
-  { number: '500+', label: 'Projects Completed' },
-  { number: '12+', label: 'Years in Business' },
-  { number: '50+', label: 'Team Members' },
-  { number: '15', label: 'Cities Served' },
+  { number: '200+', label: 'Projects Completed' },
+  { number: '15+', label: 'Years in Business' },
+  { number: '20+', label: 'Team Members' },
+  { number: '5', label: 'Cities Served' },
 ];
 
 const About = () => {
   return (
     <>
       <Helmet>
-        <title>About Us | NeonCraft Studios - Our Story & Vision</title>
+        <title>About Us | Apple Advertising - Our Story & Vision</title>
         <meta 
           name="description" 
-          content="Learn about NeonCraft Studios, our passion for illuminated signage, and our commitment to crafting premium neon signs and LED displays." 
+          content="Learn about Apple Advertising, our passion for illuminated signage, and our commitment to crafting premium neon signs and LED displays." 
         />
       </Helmet>
       
@@ -60,7 +60,7 @@ const About = () => {
               className="max-w-3xl"
             >
               <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-foreground">
-                About <span className="gradient-text-neon">NeonCraft</span>
+                About <span className="gradient-text-neon">Apple Advertising</span>
               </h1>
               <p className="mt-6 text-xl text-muted-foreground">
                 We're a team of designers, engineers, and craftsmen united by a single passion: 
@@ -85,7 +85,7 @@ const About = () => {
                 </h2>
                 <div className="space-y-4 text-muted-foreground">
                   <p>
-                    Founded in 2012, NeonCraft Studios began as a small workshop with a big dream: 
+                    Founded in 2012, Apple Advertising began as a small workshop with a big dream: 
                     to revolutionize how businesses communicate their brand through illuminated signage.
                   </p>
                   <p>
@@ -95,7 +95,7 @@ const About = () => {
                   </p>
                   <p>
                     Today, we're proud to have transformed the storefronts and brand identities of 
-                    hundreds of businesses, from boutique cafes to Fortune 500 companies.
+                    hundreds of businesses, from boutique cafes to Fortune 200 companies.
                   </p>
                 </div>
               </motion.div>
@@ -116,7 +116,7 @@ const About = () => {
                   <p className="text-foreground italic">
                     "Every light we craft is a promise to make your brand shine brighter than the rest."
                   </p>
-                  <p className="mt-2 text-sm text-muted-foreground">— The NeonCraft Team</p>
+                  <p className="mt-2 text-sm text-muted-foreground">— The Apple Advertising Team</p>
                 </div>
               </motion.div>
             </div>

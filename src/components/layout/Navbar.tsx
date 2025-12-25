@@ -44,7 +44,7 @@ export default function Navbar() {
               className="text-2xl font-bold gradient-text-neon"
               whileHover={{ scale: 1.05 }}
             >
-              NeonCraft
+            Appple Advertising
             </motion.span>
           </Link>
 
@@ -74,7 +74,7 @@ export default function Navbar() {
           <div className="hidden md:block">
             <Link to="/contact">
               <Button variant="hero" size="lg" className="shadow-lg">
-                Get a Quote
+                Reach Out
               </Button>
             </Link>
           </div>
@@ -126,7 +126,7 @@ export default function Navbar() {
               >
                 <Link to="/contact">
                   <Button variant="hero" className="w-full mt-2">
-                    Get a Quote
+                    Reach Out
                   </Button>
                 </Link>
               </motion.div>
